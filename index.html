@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>CSxKING.me</title>
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+    <!-- MaterializeCSS CSS file -->
+    <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css"  type="text/css" media="screen,projection" />
+    <!-- Stylsheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- Import jQuery -->
+    <script src="assets/js/jquery.min.js" type="application/javascript"></script>
+    <!-- Main.js -->
+    <script src="assets/js/main1.js"></script>
+    <!-- Enable Mobile Resizing and Compatibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      window.onload = function() {
+        console.log("Listen, Jerry, I don’t want to overstep my bounds or anything. It’s your house. It’s your world. You’re a real Julius Caesar, but I’ll tell you some, tell you how-how I feel about school, Jerry. It’s a waste of time, a bunch of people running around, bumping into each other. G-guy up front says, “two plus two.” The people in the back say, “four.” Then the bell rings, and they give you a carton of milk and a piece of paper that says you can take a dump or something. I mean, it’s—it’s not a place for smart people, Jerry, and I know that’s not a popular opinion, but it’s my two cents on the issue.");
+      }
+    </script>
+  </head>
+  <body scroll="no" class="grey darken-4" style="overflow:hidden;position:fixed;">
+    <div class="valign-wrapper">
+      <div class="card-panel teal hoverable center-align center grey darken-4" style="z-index: 10;position: fixed; width:50%; margin:0 auto;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+        <h4 class="white-text">CSxKING</h4>
+        <hr />
+        <span class="white-text">Programmer, Gamer, and otaku.</span><br />
+        <img class="custom-icon" src="assets/img/instagram-256.png" style="position:relative;left:11px;width:16px;height:16px;margin-right:16px;"></img><a href="https://instagram.com/csxkingjp" target=_blank>Instagram</a><br />
+        <img class="custom-icon" src="assets/img/steam-256.png" style="width:16px;height:16px;margin-right:16px;"></img><a href="https://steamcommunity.com/id/CSxKING/" target=_blank>Steam</a>
+      </div>
+    </div>
+      <div id="videoWrapper">
+
+      </div>
+    </div>
+    <div class="container hidden">
+      <script>
+      //var audio = new Audio("assets/audio/addict-with-a-pen.mp3");
+        window.onload = function() {
+          setTimeout(function() {
+            $('#AudioVideoAgreement').modal('onCloseEnd', function() {
+              if( audio.paused === true ) {
+                window.refresh();
+              }
+            });
+              function SetVolume(val) {
+                audio.volume = val / 100;
+              }
+              audio.volume = 0.50;
+              audio.play();
+          }, 1500);
+        }
+        var video = $('<video />', {
+          id: 'video',
+          src: 'assets/video/reap.mp4',
+          type: 'video/mp4',
+          loop: true,
+          controls: false,
+          class: "",
+        });
+        video.appendTo($('#videoWrapper'));
+        var vod = document.getElementById('video');
+        vod.play();
+        vod.ontimeupdate = function() {
+          //console.log(this.currentTime); old-debug
+          $("#progress").attr('style', 'width: ' + (this.currentTime / this.duration * 100).toFixed(2) + '%;');
+        }
+        setTimeout(function() {
+          if( vod.paused === true ) {
+            $('#AudioVideoAgreement').modal('open');
+          }
+        }, 1500);
+      </script>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Modal Structure -->
+    <div id="AudioVideoAgreement" class="modal">
+      <div class="modal-content">
+        <h4>Audio Warning</h4>
+        <p>This website requires the playback of audio and video content. By using it, you agree that you will hear and see audio and video elements.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="javascript:vod.play();" class="modal-close waves-effect waves-green btn-flat">I Agree</a>
+        <a href="http://lmgtfy.com/?iie=1&q=i+am+a+faggot+because+i+don%27t+like+music+and+videos" class="modal-close waves-effect waves-green btn-flat">I'm a faggot and disagree.</a>
+      </div>
+    </div>
+
+    <!-- MaterializeCSS JS file -->
+    <script type="text/javascript" src="assets/materialize/js/materialize.min.js" type="application/javascript"></script>
+  </body>
+</html>
